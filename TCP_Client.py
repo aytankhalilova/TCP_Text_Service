@@ -8,7 +8,7 @@ import TCP_Server
 INTERFACE = '127.0.0.1'
 PORT = 1060
 BUFFSIZE = 2048
-SEPARATOR = "*"
+GAP = "*"
 
 class TcpClient:
     def __init__(self, host, port):
@@ -22,7 +22,7 @@ class TcpClient:
         size_of_srcfile = os.path.getsize(source_file)
         size_of_kjfile = os.path.getsize(key_or_json_file)
         print('Sending mode, source file and {} file size to TCP_Server:'.format("json" if mode=="change_text" else "key"))
-        sock.send(f"{mode}{SEPARATOR}{size_of_srcfile}{SEPARATOR}{size_of_kjfile}".encode())
+        sock.send(f"{mode}{GAP}{size_of_srcfile}{GAP}{size_of_kjfile}".encode())
         with open(source_file, "r") as f:
             data_of_srcfile = f.read()
             print(data_of_srcfile)
