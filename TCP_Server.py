@@ -22,7 +22,7 @@ class TcpServer:
             print('We have accepted connection from ', sockname)
             print('Receiving mode, file size and json/key file size:')
             received = sc.recv(BUFFSIZE).decode()
-            mode, size_of_file, size_of_key_or_json = received.split("@")
+            mode, size_of_file, size_of_key_or_json = received.split("#")
             size_of_file = int(size_of_file)
             size_of_key_or_json = int(size_of_key_or_json)
 
