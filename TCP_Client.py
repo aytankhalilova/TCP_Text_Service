@@ -21,7 +21,7 @@ class TcpClient:
         size_of_srcfile = os.path.getsize(source_file)
         size_of_kjfile = os.path.getsize(key_or_json_file)
         print('Sending mode, source file and {} file size to TCP_Server:'.format("json" if mode=="change_text" else "key"))
-        sock.send(f"{mode}@{size_of_srcfile}@{size_of_kjfile}".encode())
+        sock.send(f"{mode}#{size_of_srcfile}#{size_of_kjfile}".encode())
         with open(source_file, "r") as f:
             data_of_srcfile = f.read()
             print(data_of_srcfile)
