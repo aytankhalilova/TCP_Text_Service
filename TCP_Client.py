@@ -8,7 +8,7 @@ import TCP_Server
 INTERFACE = '127.0.0.1'
 PORT = 1060
 BUFFSIZE = 2048
-GAP = "*"
+GAP = "@"
 
 class TcpClient:
     def __init__(self, host, port):
