@@ -4,7 +4,7 @@ import json
 INTERFACE = '127.0.0.1'
 PORT = 1060
 BUFFSIZE = 2048
-SEPARATOR = "*"
+GAP = "*"
 
 
 class TcpServer:
@@ -24,7 +24,7 @@ class TcpServer:
             print('We have accepted connection from ', sockname)
             print('Receiving mode, file size and json/key file size:')
             received = sc.recv(BUFFSIZE).decode()
-            mode, size_of_file, size_of_key_or_json = received.split(SEPARATOR)
+            mode, size_of_file, size_of_key_or_json = received.split(GAP)
             size_of_file = int(size_of_file)
             size_of_key_or_json = int(size_of_key_or_json)
 
